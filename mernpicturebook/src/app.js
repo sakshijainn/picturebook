@@ -26,7 +26,7 @@ app.get("/login" ,(req,res)=>
   res.render("login");
 });
 
-app.get("/signup" ,(req,res)=>
+app.get("/register" ,(req,res)=>
 {
   res.render("signup");
 });
@@ -34,9 +34,9 @@ app.get("/signup" ,(req,res)=>
 app.get('/welcome', (req,res)=>
 {
     res.render("welcome");
-})
+});
 
-app.post("/signup",async(req,res)=>{
+app.post("/register",async(req,res)=>{
   try
   {
      
