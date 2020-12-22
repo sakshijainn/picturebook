@@ -72,7 +72,7 @@ app.post("/register",async(req,res)=>{
 })
 
 
-app.post('/login', async(req,res)=>{
+app.post("/login", async(req,res)=>{
   try
   {
       const email = req.body.email;
