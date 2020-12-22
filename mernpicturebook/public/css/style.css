@@ -140,6 +140,11 @@ button a {
     clip-path: circle(75vh at 50% -20vh);
   }
 
+  .two 
+  {
+    margin-top: -120px;
+  }
+
   .two h1 {
     font-size: 3rem;
 
