@@ -78,16 +78,16 @@ app.post("/login", async(req,res)=>{
       const email = req.body.email;
       const password = req.body.password;
       const userEmail = await Register.findOne({email:email});
-      res.send(userEmail);
-      console.log(userEmail);
-      // if(userEmail.password===password)
-      // {
-      //   res.status(201).render("welcome");
-      // }
-      // else
-      // {
-      //   res.send(`pwd not matching`);
-      // }
+      // res.send(userEmail);
+      // console.log(userEmail);
+      if(userEmail.password===password)
+      {
+        res.status(201).render("welcome");
+      }
+      else
+      {
+        res.send(`pwd not matching`);
+      }
   }
   catch(error)
   {
