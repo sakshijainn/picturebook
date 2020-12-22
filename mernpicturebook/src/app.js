@@ -47,6 +47,7 @@ app.post("/register",async(req,res)=>{
       if(password === cpassword)
       {
 
+        
           const registerPicture = new Register({
               firstname :req.body.firstname,
               email:req.body.email,
