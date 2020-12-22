@@ -36,6 +36,28 @@ app.post("/signup",async(req,res)=>{
   {
       console.log(req.body.firstname);
       res.send(req.body.firstname);
+      // const password = request.body.password;
+      // const cpassword  = request.body.confirmpassword;
+     
+
+      // if(password === cpassword)
+      // {
+
+      //     const registerPicture = new Register({
+      //         firstname :request.body.firstname,
+      //         email:request.body.email,
+      //         password:request.body.password,
+      //         confirmpassword:request.body.confirmpassword
+      //     })
+      //    const registered= await registerPicture.save();
+      //    response.status(201).render("welcome");
+
+      // }
+      // else
+      // {
+      //     response.send(`pwd not matching`);
+      // }
+
   }
   catch(error)
   {

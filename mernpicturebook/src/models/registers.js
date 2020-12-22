@@ -1,4 +1,4 @@
-const mongoose = requie("mongoose");
+const mongoose = require("mongoose");
 const pictureSchema = new mongoose.Schema({
     firstname:{
         type:String,
