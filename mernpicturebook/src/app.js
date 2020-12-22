@@ -28,7 +28,7 @@ app.get("/login" ,(req,res)=>
 
 app.get("/register" ,(req,res)=>
 {
-  res.render("signup");
+  res.render("register");
 });
 
 app.get('/welcome', (req,res)=>
@@ -40,18 +40,18 @@ app.post("/register",async(req,res)=>{
   try
   {
      
-      const password = request.body.password;
-      const cpassword  = request.body.confirmpassword;
+      const password = req.body.password;
+      const cpassword  = req.body.confirmpassword;
      
 
       if(password === cpassword)
       {
 
           const registerPicture = new Register({
-              firstname :request.body.firstname,
-              email:request.body.email,
-              password:request.body.password,
-              confirmpassword:request.body.confirmpassword
+              firstname :req.body.firstname,
+              email:req.body.email,
+              password:req.body.password,
+              confirmpassword:req.body.confirmpassword
           })
          const registered= await registerPicture.save();
          res.status(201).render("welcome");
