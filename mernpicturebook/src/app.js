@@ -4,7 +4,8 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 require("./db/conn");
-const Register = require('./models/registers');
+const Register = require("./models/registers");
+const {json}= require("express");
 
 const static_path = path.join(__dirname, "../public");
 const template_path = path.join(__dirname, "../templates/views");
@@ -30,33 +31,36 @@ app.get("/signup" ,(req,res)=>
   res.render("signup");
 });
 
+app.get('/welcome', (req,res)=>
+{
+    res.render("welcome");
+})
 
 app.post("/signup",async(req,res)=>{
   try
   {
-      console.log(req.body.firstname);
-      res.send(req.body.firstname);
-      // const password = request.body.password;
-      // const cpassword  = request.body.confirmpassword;
+     
+      const password = request.body.password;
+      const cpassword  = request.body.confirmpassword;
      
 
-      // if(password === cpassword)
-      // {
+      if(password === cpassword)
+      {
 
-      //     const registerPicture = new Register({
-      //         firstname :request.body.firstname,
-      //         email:request.body.email,
-      //         password:request.body.password,
-      //         confirmpassword:request.body.confirmpassword
-      //     })
-      //    const registered= await registerPicture.save();
-      //    response.status(201).render("welcome");
+          const registerPicture = new Register({
+              firstname :request.body.firstname,
+              email:request.body.email,
+              password:request.body.password,
+              confirmpassword:request.body.confirmpassword
+          })
+         const registered= await registerPicture.save();
+         res.status(201).render("welcome");
 
-      // }
-      // else
-      // {
-      //     response.send(`pwd not matching`);
-      // }
+      }
+      else
+      {
+          res.send(`pwd not matching`);
+      }
 
   }
   catch(error)

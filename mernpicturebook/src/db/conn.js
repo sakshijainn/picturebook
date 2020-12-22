@@ -1,5 +1,10 @@
 const mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost:27017/pictureRegisteration",{
+
+
+
+
+
+mongoose.connect("mongodb://localhost:27017/picture",{
     useCreateIndex:true,
     useNewUrlParser:true,
     useUnifiedTopology:true
@@ -8,5 +13,6 @@ mongoose.connect("mongodb://localhost:27017/pictureRegisteration",{
 }).catch((e)=>{
     console.log(`No connection! Sorry.`);
 })
+
 
 
