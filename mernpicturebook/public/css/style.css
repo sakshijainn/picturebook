@@ -138,6 +138,7 @@ button a {
     background-size: contain;
     flex-direction: column;
     clip-path: circle(75vh at 50% -20vh);
+    
   }
 
   .two 
